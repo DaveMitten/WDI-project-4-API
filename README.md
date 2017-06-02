@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+Final Project
+
+vegan help
+
+post an argument online and get a calvary with educational responses and backing up!
+
+news whip api for searching vegan
+
+http://docs.newswhip.com/#api-endpoints
+
+guardian has searchable terms
+
+
+http://open-platform.theguardian.com/documentation/tag
