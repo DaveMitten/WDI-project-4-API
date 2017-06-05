@@ -1,10 +1,12 @@
 class AuthenticationsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def register
     user = User.new(user_params)
 p user
     if user.save
-      # token = Auth.issue({id: user.id})
-      render json: user, status: :ok
+      token = Auth.issue({id: user.id})
+      render json: { token: token, user: UserSerializer.new(user) }, status: :ok
     else
       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -21,8 +23,9 @@ p user
   end
 
   private
-
     def user_params
-      params.permit(:username, :first_name, :last_name, :email, :password, :password_confirmation)
+      hash = {}
+      hash.merge! params.slice(:username, :first_name, :last_name, :email, :password, :password_confirmation).permit!
+      hash
     end
 end
