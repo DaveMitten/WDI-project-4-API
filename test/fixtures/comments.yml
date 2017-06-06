@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  commment: MyText
-  created_on: 2017-06-06
+  body: MyText
   question: one
+  user: one
 
 two:
-  commment: MyText
-  created_on: 2017-06-06
+  body: MyText
   question: two
+  user: two

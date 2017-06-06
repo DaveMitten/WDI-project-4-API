@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :commment, :created_on
+  attributes :id, :body
   has_one :question
-  belongs_to :user
+  has_one :user
 end
