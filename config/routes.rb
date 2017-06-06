@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :questions
   scope :api do
     resources :users
     resources :posts
