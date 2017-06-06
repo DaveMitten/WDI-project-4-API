@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606092245) do
+ActiveRecord::Schema.define(version: 20170606111247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20170606092245) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.text "content"
     t.string "tags"
     t.date "created_on"
     t.datetime "created_at", null: false
@@ -41,7 +40,13 @@ ActiveRecord::Schema.define(version: 20170606092245) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "comments_id"
+    t.bigint "questions_id"
+    t.index ["comments_id"], name: "index_users_on_comments_id"
+    t.index ["questions_id"], name: "index_users_on_questions_id"
   end
 
   add_foreign_key "comments", "questions"
+  add_foreign_key "users", "comments", column: "comments_id"
+  add_foreign_key "users", "questions", column: "questions_id"
 end
