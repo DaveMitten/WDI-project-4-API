@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1
   def show
-    render json: @question
+    render json: @question, include: ['comments', 'comments.user']
   end
 
   # POST /questions

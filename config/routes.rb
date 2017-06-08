@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :questions
+
   scope :api do
+    resources :comments
+    resources :questions
     resources :users
     resources :posts
     post '/register', to: 'authentications#register'
