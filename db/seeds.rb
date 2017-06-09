@@ -23,7 +23,7 @@ u2.questions.create!(
 )
 
 c1 = u1.comments.create(
-    body: "this is a comment"
+    body: "A discussion forum to help us figure out our topics"
 )
 
 q1.comments << c1
