@@ -6,7 +6,7 @@ u1 = User.create!(username: "DJM",
     password_confirmation: "password")
 
 u2 = User.create!(
-    username: "TimS",
+    username: "Tim-S",
     first_name: "Tim",
     last_name: "Shaw",
     email: "tim@tim.com",
@@ -14,12 +14,12 @@ u2 = User.create!(
     password_confirmation: "password")
 
 q1 = u1.questions.create!(
-    title: "This is a question",
-    tags: "this is a tag"
+    title: "What is this site all about?",
+    tags: "question" "why" "inqusitive"
 )
 u2.questions.create!(
-    title: "This is a another question 2",
-    tags: "this is a another tag 2"
+    title: "What shall I do now?",
+    tags: "question" "next" "clueless"
 )
 
 c1 = u1.comments.create(
@@ -29,7 +29,7 @@ c1 = u1.comments.create(
 q1.comments << c1
 
 Comment.create!(
-  body: "this is a comment",
+  body: "Have a look?",
   user_id: u2.id,
   question_id: q1.id
 )
